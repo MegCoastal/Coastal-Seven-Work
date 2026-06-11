@@ -5,7 +5,6 @@ import redis.asyncio as redis
 load_dotenv()
 
 REDIS_URL = os.getenv("REDIS_URL")
-print("REDIS_URL =", repr(REDIS_URL))
 redis_client = redis.from_url(
     REDIS_URL,
     decode_responses=True
@@ -38,7 +37,6 @@ import asyncio
 
 async def main():
     result = await get_products()
-    print(REDIS_URL)
     print(result)
 
 if __name__ == "__main__":
