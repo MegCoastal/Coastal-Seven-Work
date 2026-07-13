@@ -36,3 +36,8 @@ class User(Base):
         Boolean,
         default=False
     )
+
+    is_vendor = Column(
+        Boolean,
+        default=False
+    )

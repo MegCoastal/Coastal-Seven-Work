@@ -1,28 +1,22 @@
-from passlib.context import CryptContext
+import bcrypt
 
-pwd_context = CryptContext(
-    schemes=["bcrypt"],
-    deprecated="auto"
-)
+def hash_password(password: str) -> str:
+    return bcrypt.hashpw(password.encode("utf-8"), bcrypt.gensalt()).decode("utf-8")
 
-def hash_password(password: str):
-    return pwd_context.hash(password)
-
-def verify_password(
-    plain_password: str,
-    hashed_password: str
-):
-    return pwd_context.verify(
-        plain_password,
-        hashed_password
-    )
+def verify_password(plain_password: str, hashed_password: str) -> bool:
+    try:
+        return bcrypt.checkpw(plain_password.encode("utf-8"), hashed_password.encode("utf-8"))
+    except Exception:
+        return False
 
 from jose import jwt
 from datetime import datetime, timedelta
 
-SECRET_KEY = "mysecretkey"
-ALGORITHM = "HS256"
-ACCESS_TOKEN_EXPIRE_MINUTES = 30
+from app.config import settings
+
+SECRET_KEY = settings.SECRET_KEY
+ALGORITHM = settings.ALGORITHM
+ACCESS_TOKEN_EXPIRE_MINUTES = settings.ACCESS_TOKEN_EXPIRE_MINUTES
 
 def create_access_token(data: dict):
     
@@ -123,4 +117,15 @@ def get_current_admin_user(
             detail="Admin access required"
         )
 
+    return current_user
+
+
+def get_current_vendor_or_admin_user(
+    current_user: User = Depends(get_current_user)
+):
+    if not (current_user.is_admin or current_user.is_vendor):
+        raise HTTPException(
+            status_code=403,
+            detail="Vendor or Admin access required"
+        )
     return current_user

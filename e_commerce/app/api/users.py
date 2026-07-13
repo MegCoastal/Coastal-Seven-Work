@@ -53,7 +53,8 @@ def create_user(
         email=user.email,
         hashed_password=hash_password(
             user.password
-        )
+        ),
+        is_vendor=user.is_vendor
     )
 
     db.add(db_user)

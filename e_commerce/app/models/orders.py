@@ -30,3 +30,18 @@ class Order(Base):
         String,
         default="Pending"
     )
+
+    shipping_address = Column(
+        String,
+        nullable=True
+    )
+
+    shipping_phone = Column(
+        String,
+        nullable=True
+    )
+
+    payment_method = Column(
+        String,
+        nullable=True
+    )

@@ -1,4 +1,52 @@
-venv/
+# Python Environment and Caches
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local Environment Configs (Secret Keys, API Keys)
 .env
+.env.*
+!.env.example
+secrets.json
+
+# Local Uploads and Temp Media Assets
+# (In production, uploads should be stored on AWS S3, Cloudinary, or persistent volume mounts)
+static/uploads/*
+!static/uploads/.gitkeep
+
+# Project Scratch & Maintenance Scripts
+map_images.py
+migrate_orders.py
+migrate_trgm.py
+migrate_vendor.py
+seed_products.py
+scratch/
+
+crash.txt
+
+# Editor / IDE Settings
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Docker Caches and Volumes data
+.docker/
+docker-compose.override.yml
