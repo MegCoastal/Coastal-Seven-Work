@@ -56,7 +56,8 @@ export function useChat() {
     }, 15); // Print a character every 15ms
 
     try {
-      const response = await fetch("http://localhost:8000/ai/rag/chat", {
+      const apiBase = import.meta.env.VITE_API_URL || "http://localhost:8000";
+      const response = await fetch(`${apiBase}/ai/rag/chat`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
