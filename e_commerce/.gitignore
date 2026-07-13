@@ -18,6 +18,8 @@ htmlcov/
 .env.*
 !.env.example
 secrets.json
+*.sql
+
 
 # Local Uploads and Temp Media Assets
 # (In production, uploads should be stored on AWS S3, Cloudinary, or persistent volume mounts)
