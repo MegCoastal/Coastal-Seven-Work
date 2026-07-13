@@ -1,42 +1,43 @@
-# Python Environment and Caches
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-.Python
-env/
-venv/
-.venv/
-pip-log.txt
-pip-delete-this-directory.txt
-.pytest_cache/
-.coverage
-htmlcov/
+# --- Backend Caches & Environments ---
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+**/*.pyd
+backend/env/
+backend/venv/
+backend/.venv/
+backend/.pytest_cache/
+backend/.coverage
+backend/htmlcov/
 
-# Local Environment Configs (Secret Keys, API Keys)
-.env
-.env.*
-!.env.example
-secrets.json
-*.sql
+# --- Backend Local Secrets & Configs ---
+backend/.env
+backend/.env.*
+!backend/.env.example
+backend/secrets.json
+backend/*.sql
 
+# --- Backend Uploads & Media ---
+backend/static/uploads/*
+!backend/static/uploads/.gitkeep
 
-# Local Uploads and Temp Media Assets
-# (In production, uploads should be stored on AWS S3, Cloudinary, or persistent volume mounts)
-static/uploads/*
-!static/uploads/.gitkeep
+# --- Backend Scratch & Maintenance ---
+backend/map_images.py
+backend/seed_products.py
+backend/migrate_*.py
+backend/scratch/
+backend/crash.txt
 
-# Project Scratch & Maintenance Scripts
-map_images.py
-migrate_orders.py
-migrate_trgm.py
-migrate_vendor.py
-seed_products.py
-scratch/
+# --- Frontend Node & Caches ---
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+frontend/.env
+frontend/.env.*
+frontend/.eslintcache
+frontend/npm-debug.log*
 
-crash.txt
-
-# Editor / IDE Settings
+# --- Editor / IDE Settings ---
 .vscode/
 .idea/
 *.suo
@@ -45,10 +46,10 @@ crash.txt
 *.sln
 *.sw?
 
-# OS metadata
+# --- OS Metadata ---
 .DS_Store
 Thumbs.db
 
-# Docker Caches and Volumes data
+# --- Docker Caches ---
 .docker/
-docker-compose.override.yml
+**/docker-compose.override.yml
