@@ -183,11 +183,12 @@ export const ShoppingBagIcon = (props) => (
 
 export const AIAssistantIcon = (props) => (
   <IconWrapper {...props}>
-    <path d="M12 8V4m0 0-3 3m3-3 3 3" />
-    <rect x="5" y="8" width="14" height="11" rx="3" />
-    <circle cx="9" cy="13" r="1" fill="currentColor" />
-    <circle cx="15" cy="13" r="1" fill="currentColor" />
-    <path d="M9 16c1 1 5 1 6 0" />
+    {/* Central Gemini 4-Point Star */}
+    <path d="M12 3c0 4.5 3.5 8 8 8-4.5 0-8 3.5-8 8 0-4.5-3.5-8-8-8 4.5 0 8-3.5 8-8Z" fill="currentColor" stroke="none" />
+    {/* Orbiting Orbital Ring */}
+    <circle cx="12" cy="12" r="10" strokeDasharray="3 3" opacity="0.6" />
+    {/* Secondary mini spark */}
+    <path d="M18 5c0 1.5 1 2.5 2.5 2.5-1.5 0-2.5 1-2.5 2.5 0-1.5-1-2.5-2.5-2.5 1.5 0 2.5-1 2.5-2.5Z" fill="currentColor" stroke="none" opacity="0.8" />
   </IconWrapper>
 );
 
