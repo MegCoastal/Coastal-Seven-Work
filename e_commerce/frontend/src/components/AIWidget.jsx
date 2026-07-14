@@ -22,7 +22,7 @@ function AIWidget() {
       onClick={() => openDrawer("ai")}
       aria-label="Open AI Shopping Assistant"
     >
-      <AIAssistantIcon size={26} />
+      <AIAssistantIcon size={22} />
       <span className="ai-widget-tooltip">AI Assistant ✨</span>
     </button>
   );
