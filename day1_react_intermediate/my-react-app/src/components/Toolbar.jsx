@@ -1,6 +1,9 @@
 import Button from './Button';
 
-export default function Toolbar({onPlayMovie,onUploadImage}){
+const onPlayMovie =()=>alert('Playing!')
+const onUploadImage = ()=>alert('Uploading!')
+
+export default function Toolbar(){
   return(
     <div>
     <Button onClick = {onPlayMovie}>

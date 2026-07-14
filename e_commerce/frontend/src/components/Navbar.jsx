@@ -177,20 +177,6 @@ function Navbar() {
               </button>
             </li>
 
-            {/* Unified Help & AI Copilot Trigger */}
-            {isAuthenticated && !user?.is_admin && (
-              <li className="nav-action-item">
-                <button
-                  type="button"
-                  className="nav-icon-btn"
-                  onClick={() => openDrawer("ai")}
-                  aria-label="Open Help Copilot"
-                  style={{ display: "flex", alignItems: "center", justifyContent: "center" }}
-                >
-                  <AIAssistantIcon size={20} style={{ color: "var(--ocean)" }} />
-                </button>
-              </li>
-            )}
 
             {/* Persistent Hamburger Drawer Trigger */}
             <li className="nav-action-item">

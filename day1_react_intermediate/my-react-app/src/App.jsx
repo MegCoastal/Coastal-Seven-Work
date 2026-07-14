@@ -4,13 +4,10 @@ import Accordion from './components/Accordion'
 
 function App() {
   return(
-    <div>
-    <Toolbar
-    onPlayMovie ={()=>alert('Playing!')}
-    onUploadImage = {()=>alert('Uploading!')}
-    />
+    <>
+    <Toolbar/>
     <Accordion/>
-    </div>
+    </>
   );
 }
 export default App
